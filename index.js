@@ -4,7 +4,7 @@ const express = require('express');
 const passport = require('passport');
 const expressSession = require('express-session');
 
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config({ path: '.env' });
 
 const TrelloStrategy = require('passport-trello').Strategy;
 
@@ -12,7 +12,6 @@ const TrelloStrategy = require('passport-trello').Strategy;
 //       We could run out of memory in the future if there's a lot of request.
 //       We might have to move this to something like Redis or Memcached for scalability.
 const storage = require('node-persist');
-console.log(Object.keys(storage));
 storage.initSync();
 
 const app = express();
